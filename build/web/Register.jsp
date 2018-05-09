@@ -54,9 +54,33 @@
                 <div class="right">
                     <br></br><br>
                     <div class="word">
-                        <h2>Register</h2>
-
-
+                        <h1>Registration form</h1>   
+                        <form id="reg" method="POST" action="RegistrationController"> 
+                            <div class="form-element">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" size="40" required="">
+                            </div>
+                            <div class="form-element">
+                                <label for="username">Username</label>
+                                <input type="text" name="uname" id="uname" required="">
+                            </div>
+                            <div class="form-element">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" required="">
+                            </div>
+                            <div class="form-element">
+                                <label for="rPassword">Repeat password</label>
+                                <input type="password" id="rPassword" required="">
+                            </div>
+                            <div class="form-element">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required="">
+                            </div>
+                            <div class="form-element">
+                                <input type="submit" value="Submit" onclick="return check(this)">
+                                <input type="reset" value="Reset">
+                            </div>  
+                        </form>
                     </div>
                 </div>
             </div>

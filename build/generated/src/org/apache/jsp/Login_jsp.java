@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -121,32 +121,31 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"right\">\n");
       out.write("                    <br></br><br>\n");
       out.write("                    <div class=\"word\">\n");
-      out.write("                        <h1>Registration form</h1>   \n");
-      out.write("                        <form id=\"reg\" method=\"POST\" action=\"RegistrationController\"> \n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"name\">Name</label>\n");
-      out.write("                                <input type=\"text\" name=\"name\" id=\"name\" size=\"40\" required=\"\">\n");
-      out.write("                            </div>\n");
+      out.write("                        <h2>Login</h2>\n");
+      out.write("                        <form method=\"POST\" action=\"LoginController\"> \n");
       out.write("                            <div class=\"form-element\">\n");
       out.write("                                <label for=\"username\">Username</label>\n");
-      out.write("                                <input type=\"text\" name=\"uname\" id=\"uname\" required=\"\">\n");
+      out.write("                                <input type=\"text\" name=\"uname\" id=\"uname\" required >\n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"form-element\" >\n");
+      out.write("                                <label for=\"password\" >Password</label>\n");
+      out.write("                                <input type=\"password\" name=\"password\" id=\"password\" required>\n");
       out.write("                            </div>\n");
       out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"password\">Password</label>\n");
-      out.write("                                <input type=\"password\" name=\"password\" id=\"password\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"rPassword\">Repeat password</label>\n");
-      out.write("                                <input type=\"password\" id=\"rPassword\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"email\">Email</label>\n");
-      out.write("                                <input type=\"email\" id=\"email\" name=\"email\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <input type=\"submit\" value=\"Submit\" onclick=\"return check(this)\">\n");
-      out.write("                                <input type=\"reset\" value=\"Reset\">\n");
-      out.write("                            </div>  \n");
+      out.write("                                <input type=\"submit\" value=\"Submit\" id=\"submit\">\n");
+      out.write("                            </div> \n");
+      out.write("                            <c:if test=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty requestScope.errors}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\n");
+      out.write("                                <c:forEach items=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.errors}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" var=\"error\">\n");
+      out.write("                                    <p>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${error}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" </p>\n");
+      out.write("                                    <br/>\n");
+      out.write("                                </c:forEach>\n");
+      out.write("                            </c:if>     \n");
       out.write("                        </form>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");

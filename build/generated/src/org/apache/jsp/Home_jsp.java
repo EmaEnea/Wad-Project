@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -83,15 +83,17 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\n");
       out.write("<nav>\n");
       out.write("    <ul>\n");
-      out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"home.php\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\n");
-      out.write("        <li><a href=\"Register.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"contact.php\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("                <span class=\"glyphicon glyphicon-envelope\"></span> Contact</a></li>\n");
+      out.write("        <li><a href=\"register.php\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-registration-mark\"></span> Register</a></li>\n");
-      out.write("        <li><a href=\"Login.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"login.php\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n");
-      out.write("        <li><a href=\"Logout.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"logout.php\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\n");
-      out.write("        <li><a href=\"Profile.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"profile.php\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\n");
       out.write("    </ul>\n");
       out.write("</nav>");
@@ -121,33 +123,9 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"right\">\n");
       out.write("                    <br></br><br>\n");
       out.write("                    <div class=\"word\">\n");
-      out.write("                        <h1>Registration form</h1>   \n");
-      out.write("                        <form id=\"reg\" method=\"POST\" action=\"RegistrationController\"> \n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"name\">Name</label>\n");
-      out.write("                                <input type=\"text\" name=\"name\" id=\"name\" size=\"40\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"username\">Username</label>\n");
-      out.write("                                <input type=\"text\" name=\"uname\" id=\"uname\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"password\">Password</label>\n");
-      out.write("                                <input type=\"password\" name=\"password\" id=\"password\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"rPassword\">Repeat password</label>\n");
-      out.write("                                <input type=\"password\" id=\"rPassword\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <label for=\"email\">Email</label>\n");
-      out.write("                                <input type=\"email\" id=\"email\" name=\"email\" required=\"\">\n");
-      out.write("                            </div>\n");
-      out.write("                            <div class=\"form-element\">\n");
-      out.write("                                <input type=\"submit\" value=\"Submit\" onclick=\"return check(this)\">\n");
-      out.write("                                <input type=\"reset\" value=\"Reset\">\n");
-      out.write("                            </div>  \n");
-      out.write("                        </form>\n");
+      out.write("                        <h2>Home</h2>\n");
+      out.write("\n");
+      out.write("\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");

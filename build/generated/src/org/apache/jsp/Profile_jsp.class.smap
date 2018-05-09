@@ -1,18 +1,18 @@
 SMAP
-Register_jsp.java
+Profile_jsp.java
 JSP
 *S JSP
 *F
-+ 0 Register.jsp
-Register.jsp
++ 0 Profile.jsp
+Profile.jsp
 + 1 header.jspf
 WEB-INF/jspf/header.jspf
 + 2 footer.jspf
 WEB-INF/jspf/footer.jspf
 *L
 1,31:50
-1#1,17:81
-31#0,59:98
-1#2:157
-89#0,4:158
+1#1,19:81
+31#0,35:100
+1#2:135
+65#0,4:136
 *E

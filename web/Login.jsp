@@ -55,8 +55,25 @@
                     <br></br><br>
                     <div class="word">
                         <h2>Login</h2>
-
-
+                        <form method="POST" action="LoginController"> 
+                            <div class="form-element">
+                                <label for="username">Username</label>
+                                <input type="text" name="uname" id="uname" required >
+                            </div>
+                            <div class="form-element" >
+                                <label for="password" >Password</label>
+                                <input type="password" name="password" id="password" required>
+                            </div>
+                            <div class="form-element">
+                                <input type="submit" value="Submit" id="submit">
+                            </div> 
+                            <c:if test="${not empty requestScope.errors}">
+                                <c:forEach items="${requestScope.errors}" var="error">
+                                    <p>${error} </p>
+                                    <br/>
+                                </c:forEach>
+                            </c:if>     
+                        </form>
                     </div>
                 </div>
             </div>
