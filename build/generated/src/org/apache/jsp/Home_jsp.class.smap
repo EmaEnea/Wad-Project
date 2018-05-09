@@ -5,14 +5,18 @@ JSP
 *F
 + 0 Home.jsp
 Home.jsp
-+ 1 header.jspf
++ 1 header_loged.jspf
+WEB-INF/jspf/header_loged.jspf
++ 2 header.jspf
 WEB-INF/jspf/header.jspf
-+ 2 footer.jspf
-WEB-INF/jspf/footer.jspf
 *L
-1,31:50
-1#1,19:81
-31#0,35:100
-1#2:135
-65#0,4:136
+1,29:50
+30,2:79,3
+32,2:85
+1#1,17:87
+33#0,3:104
+36,2:107,3
+38,2:113
+1#2,15:115
+39#0,36:130
 *E

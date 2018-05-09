@@ -1,5 +1,7 @@
 .ending{
-    position:relative;
+    position:fixed;
+   left:0px;
+   bottom:0px;
     color:000000;	
     text-align:right;
     border:1px solid;

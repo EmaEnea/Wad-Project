@@ -28,7 +28,7 @@
         </style>
     </head>
     <header class="navigation">
-        <%@include file="/WEB-INF/jspf/header.jspf" %>
+        <%@include file="/WEB-INF/jspf/header_loged.jspf" %>
     </header>
     <body class="background" background="img/64.jpg">
         <section>
@@ -85,8 +85,5 @@
                 </div>
             </div>
         </section>
-        <footer class="ending">
-            <%@include file="/WEB-INF/jspf/footer.jspf" %>
-        </footer>
     </body>
 </html>

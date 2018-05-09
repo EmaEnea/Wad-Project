@@ -43,6 +43,7 @@ public class LoginController extends HttpServlet {
                 System.out.println("Error added");
                 request.getRequestDispatcher("Login.jsp").forward(request, response);
             } else {
+                request.setAttribute("users", user);
                 request.getSession().setAttribute("users", user);
                 request.getRequestDispatcher("Profile.jsp").forward(request, response);
             }
