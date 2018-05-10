@@ -20,7 +20,8 @@ public class LogoutController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getSession().setAttribute("users", null);
-        request.getRequestDispatcher("Login.jsp").forward(request, response);
+        request.getSession().setAttribute("admin", null);
+        request.getRequestDispatcher("Home.jsp").forward(request, response);
     }
 
     @Override

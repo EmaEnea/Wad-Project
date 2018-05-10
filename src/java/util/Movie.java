@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
 
 import java.io.Serializable;
@@ -11,10 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author admin
- */
 @Entity
 public class Movie implements Serializable {
 
@@ -39,8 +30,6 @@ public class Movie implements Serializable {
         this.rating = rating;
     }
     
-    
-
     public boolean isOscar() {
         return oscar;
     }
@@ -89,8 +78,6 @@ public class Movie implements Serializable {
         this.dates = date;
     }
     
-    
-    
     public Long getId() {
         return id;
     }
@@ -108,7 +95,6 @@ public class Movie implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Movie)) {
             return false;
         }
@@ -124,7 +110,6 @@ public class Movie implements Serializable {
         return "util.Movie[ id=" + id + " ]";
     }
     public Movie addMovie(String name, String genre, String channel,String hour, String date, boolean oscar, double rating){
-      
         this.setName(name);
         this.setGenre(genre);
         this.setChannel(channel);

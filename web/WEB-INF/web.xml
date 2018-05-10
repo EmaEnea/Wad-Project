@@ -18,7 +18,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
-        <url-pattern>/RegistrationController</url-pattern>
+        <url-pattern>/RegisterController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>

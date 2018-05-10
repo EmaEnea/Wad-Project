@@ -69,40 +69,36 @@
                 <div class="right">
                     <br></br><br>
                     <div class="word">
-                        <h2>Settings</h2>
-                        <h3> Choose the movie genres that you are interested in. </h3>
-                        <form id="set" method="POST" action="SettingsController"> 
+                        <h2>Profile</h2><br>
+                        <h3>Add new movie</h3>
+                        <form id="reg" method="POST" action="  "> 
                             <div class="form-element">
-                                <label for="drama">Drama</label>
-                                <input type="checkbox" name="drama" id="drama" size="40">
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="name" size="40" required="">
                             </div>
                             <div class="form-element">
-                                <label for="SF">SF</label>
-                                <input type="checkbox" name="SF" id="SF" size="40">
+                                <label for="genre">Genre</label>
+                                <input type="text" name="genre" id="genre" required="">
                             </div>
                             <div class="form-element">
-                                <label for="action">Action</label>
-                                <input type="checkbox" name="action" id="action" size="40">
+                                <label for="channel">Channel</label>
+                                <input type="text" name="channel" id="channel" required="">
                             </div>
                             <div class="form-element">
-                                <label for="romance">Romance</label>
-                                <input type="checkbox" name="romance" id="romance" size="40">
+                                <label for="hour">Hour</label>
+                                <input type="text" name="genre" id="genre" required="">
                             </div>
                             <div class="form-element">
-                                <label for="comedy">Comedy</label>
-                                <input type="checkbox" name="comedy" id="comedy" size="40">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required="">
                             </div>
                             <div class="form-element">
-                                <label for="horror">Horror</label>
-                                <input type="checkbox" name="horror" id="horror" size="40">
-                            </div>
+                                <label for="oscar">Oscar</label>
+                                <input type="checkbox" name="oscar" id="oscar">
+                            </div> 
                             <div class="form-element">
-                                <label for="advent">Adventure</label>
-                                <input type="checkbox" name="advent" id="advent" size="40">
-                            </div>
-                            <div class="form-element">
-                                <label for="fant">Fantasy</label>
-                                <input type="checkbox" name="fant" id="fant" size="40">
+                                <label for="rating">Rating</label>
+                                <input type="text" name="rating" id="rating" required="">
                             </div>
                             <div class="form-element">
                                 <input type="submit" value="Submit" onclick="return check(this)">

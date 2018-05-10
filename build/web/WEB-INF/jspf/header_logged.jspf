@@ -5,7 +5,7 @@
     <ul>
         <li><a href="Home.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="Logout.jsp" class="btn btn-danger btn-sm active">
+        <li><a href="LogoutController" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <li><a href="Profile.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-user"></span> Profile</a></li>

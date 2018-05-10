@@ -45,7 +45,13 @@ public class LoginController extends HttpServlet {
             } else {
                 request.setAttribute("users", user);
                 request.getSession().setAttribute("users", user);
-                request.getRequestDispatcher("Profile.jsp").forward(request, response);
+                if (checker.isAdmin(user)) {
+                    request.setAttribute("admin","1");
+                    request.getSession().setAttribute("admin","1");
+                    request.getRequestDispatcher("AdminProfile.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("Profile.jsp").forward(request, response);
+                }
             }
             processRequest(request, response);
         } catch (SQLException ex) {

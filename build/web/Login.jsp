@@ -28,15 +28,21 @@
         </style>
     </head>
     <header class="navigation">
-    <% int ok=1; %>
-    <c:if test="${empty  sessionScope.users }"> 
-            <% ok=0; %>*
+        <% int ok = 1;
+        int ad = 1; %>
+        <c:if test="${empty  sessionScope.users }"> 
+            <% ok = 0; %>
             <%@include file="/WEB-INF/jspf/header.jspf" %>
-    </c:if>
-    <% if (ok==1) { %>
-            <% System.out.println("user"); %>
-            <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
-    <% } %>
+        </c:if>
+        <c:if test="${empty  sessionScope.admin }"> 
+            <% ad = 0; %>
+        </c:if>
+        <% if (ok == 1 && ad==0) { %>
+        <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
+        <% }%>
+        <% if (ok == 1 && ad==1) { %>
+        <%@include file="/WEB-INF/jspf/header_admin.jspf" %>
+        <% }%>
     </header>
     <body class="background" background="img/64.jpg">
         <section>

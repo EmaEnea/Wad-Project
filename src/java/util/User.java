@@ -5,9 +5,6 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +21,8 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String email;
+    private boolean administrator;
+    private String genre;
 
     public static String getHash(String password) {
         MessageDigest digest = null;
@@ -48,6 +47,14 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+    
+    public void setGenre(String gen) {
+        this.genre = gen;
+    }
+
+    public void setAdmin(boolean x) {
+        this.administrator = x;
+    }
 
     public void setPassword(String password) {
         this.password = getHash(password);
@@ -63,6 +70,14 @@ public class User implements Serializable {
 
     public String getUsername() {
         return username;
+    }
+    
+    public String getGenre() {
+        return genre;
+    }
+
+    public boolean getAdmin() {
+        return administrator;
     }
 
     public String getPassword() {

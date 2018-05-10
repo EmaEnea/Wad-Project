@@ -8,15 +8,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class Check {
 
     public boolean movieExists(String nameMovie) throws ClassNotFoundException, SQLException {
-       Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
-        String sql = "SELECT name FROM tvguide.movie WHERE name='" + nameMovie +"'";
+        String sql = "SELECT name FROM tvguide.movie WHERE name='" + nameMovie + "'";
         ResultSet rs = instr.executeQuery(sql);
         while (rs.next()) {
             String name = rs.getString(1);
@@ -24,13 +23,14 @@ public class Check {
                 return true;
             }
         }
-        return false; 
+        return false;
     }
+
     public boolean userExists(String user) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
-        String sql = "SELECT username FROM tvguide.user WHERE username='" + user +"'";
+        String sql = "SELECT username FROM tvguide.user WHERE username='" + user + "'";
         ResultSet rs = instr.executeQuery(sql);
         while (rs.next()) {
             String username = rs.getString(1);
@@ -45,12 +45,27 @@ public class Check {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
-        pass=getHash(pass);
+        pass = getHash(pass);
         String sql = "SELECT username,password FROM tvguide.user WHERE username='" + user + "' AND password='" + pass + "'";
         ResultSet rs = instr.executeQuery(sql);
         return rs.next();
     }
-    
+
+    public boolean isAdmin(String user) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT username FROM tvguide.user WHERE username='" + user + "' AND administrator='" + 1 + "'";
+        ResultSet rs = instr.executeQuery(sql);
+        while (rs.next()) {
+            String username = rs.getString(1);
+            if (user.equals(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static String getHash(String password) {
         MessageDigest digest = null;
         try {
@@ -66,11 +81,11 @@ public class Check {
         }
         return new BigInteger(1, digest.digest()).toString(16);
     }
-    
-    public void setGenres(String genres, String user) throws ClassNotFoundException, SQLException{
+
+    public void setGenres(String genres, String user) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
-        String sql = "UPDATE tvguide.user SET genres = '"+genres+"' WHERE username='" + user +"'";
+        String sql = "UPDATE tvguide.user SET genres = '" + genres + "' WHERE username='" + user + "'";
         PreparedStatement preparedStmt = con.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }

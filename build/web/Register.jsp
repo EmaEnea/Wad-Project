@@ -29,15 +29,21 @@
         </style>
     </head>
     <header class="navigation">
-    <% int ok=1; %>
-    <c:if test="${empty  sessionScope.users }"> 
-            <% ok=0; %>*
+        <% int ok = 1;
+        int ad = 1; %>
+        <c:if test="${empty  sessionScope.users }"> 
+            <% ok = 0; %>
             <%@include file="/WEB-INF/jspf/header.jspf" %>
-    </c:if>
-    <% if (ok==1) { %>
-            <% System.out.println("user"); %>
-            <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
-    <% } %>
+        </c:if>
+        <c:if test="${empty  sessionScope.admin }"> 
+            <% ad = 0; %>
+        </c:if>
+        <% if (ok == 1 && ad==0) { %>
+        <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
+        <% }%>
+        <% if (ok == 1 && ad==1) { %>
+        <%@include file="/WEB-INF/jspf/header_admin.jspf" %>
+        <% }%>
     </header>
     <body class="background" background="img/64.jpg">
         <section>
@@ -64,7 +70,7 @@
                     <br></br><br>
                     <div class="word">
                         <h1>Registration form</h1>   
-                        <form id="reg" method="POST" action="RegistrationController"> 
+                        <form id="reg" method="POST" action="RegisterController"> 
                             <div class="form-element">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" id="name" size="40" required="">
@@ -86,10 +92,30 @@
                                 <input type="email" id="email" name="email" required="">
                             </div>
                             <div class="form-element">
+                                <label for="admin">Admin account</label>
+                                <input type="checkbox" name="admin" id="admin" onclick="yesnoCheck()">
+                            </div>
+                            <div class="form-element">
+                                <input type="password" name="adpass" id="adpass" style="display:none">
+                            </div>
+                            <br>
+                            <div class="form-element">
                                 <input type="submit" value="Submit" onclick="return check(this)">
                                 <input type="reset" value="Reset">
                             </div>  
                         </form>
+                        <script>
+                            $('#adpass').hide();
+                            function yesnoCheck() {
+                                var checkBox = document.getElementById("admin");
+                                var text = document.getElementById("adpass");
+                                if (checkBox.checked == true) {
+                                    text.style.display = "block";
+                                } else {
+                                    text.style.display = "none";
+                                }
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
