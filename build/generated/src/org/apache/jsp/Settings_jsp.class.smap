@@ -1,10 +1,10 @@
 SMAP
-Profile_jsp.java
+Settings_jsp.java
 JSP
 *S JSP
 *F
-+ 0 Profile.jsp
-Profile.jsp
++ 0 Settings.jsp
+Settings.jsp
 + 1 header.jspf
 WEB-INF/jspf/header.jspf
 + 2 header_logged.jspf
@@ -21,8 +21,8 @@ WEB-INF/jspf/header_logged.jspf
 36:133
 37,2:134,3
 39:140
-1#2,15:141
-39#0:156
-40:157,3
-41,72:160
+1#2,13:141
+39#0:154
+40:155,3
+41,71:158
 *E

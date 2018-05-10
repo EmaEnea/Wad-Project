@@ -9,7 +9,5 @@
                 <span class="glyphicon glyphicon-registration-mark"></span> Register</a></li>
         <li><a href="Login.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="Profile.jsp" class="btn btn-danger btn-sm active">
-                <span class="glyphicon glyphicon-user"></span> Profile</a></li>
     </ul>
 </nav>

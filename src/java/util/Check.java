@@ -5,8 +5,10 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Check {
 
@@ -14,7 +16,7 @@ public class Check {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
-        String sql = "SELECT username FROM watch.user WHERE username='" + user +"'";
+        String sql = "SELECT username FROM tvguide.user WHERE username='" + user +"'";
         ResultSet rs = instr.executeQuery(sql);
         while (rs.next()) {
             String username = rs.getString(1);
@@ -30,7 +32,7 @@ public class Check {
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
         pass=getHash(pass);
-        String sql = "SELECT username,password FROM watch.user WHERE username='" + user + "' AND password='" + pass + "'";
+        String sql = "SELECT username,password FROM tvguide.user WHERE username='" + user + "' AND password='" + pass + "'";
         ResultSet rs = instr.executeQuery(sql);
         return rs.next();
     }
@@ -49,5 +51,13 @@ public class Check {
             ex.printStackTrace();
         }
         return new BigInteger(1, digest.digest()).toString(16);
+    }
+    
+    public void setGenres(String genres, String user) throws ClassNotFoundException, SQLException{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DBConnection.getConnection();
+        String sql = "UPDATE tvguide.user SET genres = '"+genres+"' WHERE username='" + user +"'";
+        PreparedStatement preparedStmt = con.prepareStatement(sql);
+        preparedStmt.executeUpdate();
     }
 }

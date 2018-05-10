@@ -14,13 +14,23 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
   static {
     _jspx_dependants = new java.util.ArrayList<String>(2);
     _jspx_dependants.add("/WEB-INF/jspf/header.jspf");
-    _jspx_dependants.add("/WEB-INF/jspf/footer.jspf");
+    _jspx_dependants.add("/WEB-INF/jspf/header_logged.jspf");
   }
+
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -47,6 +57,7 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -77,26 +88,74 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <header class=\"navigation\">\n");
-      out.write("        ");
+      out.write("    ");
+ int ok=1; 
+      out.write("\n");
+      out.write("    ");
+      //  c:if
+      org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+      _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+      _jspx_th_c_if_0.setParent(null);
+      _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${empty  sessionScope.users }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+      int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+      if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write(" \n");
+          out.write("            ");
+ ok=0; 
+          out.write("*\n");
+          out.write("            ");
+          out.write("<div class=\"pic\">\n");
+          out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\n");
+          out.write("</div>\n");
+          out.write("<nav>\n");
+          out.write("    <ul>\n");
+          out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+          out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\n");
+          out.write("        <li><a href=\"Register.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+          out.write("                <span class=\"glyphicon glyphicon-registration-mark\"></span> Register</a></li>\n");
+          out.write("        <li><a href=\"Login.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+          out.write("                <span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n");
+          out.write("    </ul>\n");
+          out.write("</nav>");
+          out.write("\n");
+          out.write("    ");
+          int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+        return;
+      }
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      out.write("\n");
+      out.write("    ");
+ if (ok==1) { 
+      out.write("\n");
+      out.write("            ");
+ System.out.println("user"); 
+      out.write("\n");
+      out.write("            ");
       out.write("<div class=\"pic\">\n");
-      out.write("    <img src=\"images/77.jpg\" width=\"200\" height=\"124\">\n");
+      out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\n");
       out.write("</div>\n");
       out.write("<nav>\n");
       out.write("    <ul>\n");
-      out.write("        <li><a href=\"home.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\n");
-      out.write("        <li><a href=\"contact.jsp\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-envelope\"></span> Contact</a></li>\n");
-      out.write("        <li><a href=\"register.jsp\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-registration-mark\"></span> Register</a></li>\n");
-      out.write("        <li><a href=\"login.jsp\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n");
-      out.write("        <li><a href=\"logout.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"Logout.jsp\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\n");
-      out.write("        <li><a href=\"profile.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("        <li><a href=\"Profile.jsp\" class=\"btn btn-danger btn-sm active\">\n");
       out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\n");
+      out.write("        <li><a href=\"Settings.jsp\" class=\"btn btn-danger btn-sm active\">\n");
+      out.write("                <span class=\"glyphicon glyphicon-settings\"></span> Settings</a></li>\n");
       out.write("    </ul>\n");
-      out.write("</nav>");
+      out.write("</nav>>");
+      out.write("\n");
+      out.write("    ");
+ } 
       out.write("\n");
       out.write("    </header>\n");
       out.write("    <body class=\"background\" background=\"img/64.jpg\">\n");
@@ -122,19 +181,52 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\n");
       out.write("                <div class=\"right\">\n");
       out.write("                    <br></br><br>\n");
+      out.write("                    <script>$('#add1').hide();</script>\n");
       out.write("                    <div class=\"word\">\n");
       out.write("                        <h2>Profile</h2>\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("                        <button id=\"show1\" onClick=\"show1()\">2015</button>\n");
+      out.write("                            <div>\n");
+      out.write("                                <p style=\"display:none\" id=\"add1\"> Movie 1 <br> Movie 2 <br> Movie 3<br> Movie 4<br> Movie 5<br> </p>\n");
+      out.write("                            </div>\n");
+      out.write("                        <button id=\"show1\" onClick=\"show2()\">2016</button>\n");
+      out.write("                            <div>\n");
+      out.write("                                    <p style=\"display:none\" id=\"add2\"> Movie 1 <br> Movie 2 <br> Movie 3<br> Movie 4<br> Movie 5<br> </p>\n");
+      out.write("                            </div>\n");
+      out.write("                        <button id=\"show1\" onClick=\"show3()\">2017</button>\n");
+      out.write("                            <div>\n");
+      out.write("                                    <p style=\"display:none\"  id=\"add3\"> Movie 1 <br> Movie 2 <br> Movie 3<br> Movie 4<br> Movie 5<br> </p>\n");
+      out.write("                            </div>\n");
+      out.write("                        \n");
+      out.write("                    <script>\n");
+      out.write("                        function show1() {\n");
+      out.write("                        var x = document.getElementById(\"add1\");\n");
+      out.write("                        if (x.style.display === \"none\") {\n");
+      out.write("                            x.style.display = \"block\";\n");
+      out.write("                        } else {\n");
+      out.write("                            x.style.display = \"none\";\n");
+      out.write("                        }\n");
+      out.write("                        }\n");
+      out.write("                        function show2() {\n");
+      out.write("                            var x = document.getElementById(\"add2\");\n");
+      out.write("                            if (x.style.display === \"none\") {\n");
+      out.write("                                x.style.display = \"block\";\n");
+      out.write("                            } else {\n");
+      out.write("                                x.style.display = \"none\";\n");
+      out.write("                            }\n");
+      out.write("                        }\n");
+      out.write("                        function show3() {\n");
+      out.write("                            var x = document.getElementById(\"add3\");\n");
+      out.write("                            if (x.style.display === \"none\") {\n");
+      out.write("                                x.style.display = \"block\";\n");
+      out.write("                            } else {\n");
+      out.write("                                x.style.display = \"none\";\n");
+      out.write("                            }\n");
+      out.write("                        }\n");
+      out.write("                        </script>\n");
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </section>\n");
-      out.write("        <footer class=\"ending\">\n");
-      out.write("            ");
-      out.write("<h4>E-commerce application © WAD 2018</h4>");
-      out.write("\n");
-      out.write("        </footer>\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {

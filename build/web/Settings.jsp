@@ -63,27 +63,40 @@
                 <div class="right">
                     <br></br><br>
                     <div class="word">
-                        <h1>Registration form</h1>   
-                        <form id="reg" method="POST" action="RegistrationController"> 
+                        <h2>Settings</h2>
+                        <h3> Choose the movie genres that you are interested in. </h3>
+                        <form id="set" method="POST" action="SettingsController"> 
                             <div class="form-element">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" id="name" size="40" required="">
+                                <label for="drama">Drama</label>
+                                <input type="checkbox" name="drama" id="drama" size="40">
                             </div>
                             <div class="form-element">
-                                <label for="username">Username</label>
-                                <input type="text" name="uname" id="uname" required="">
+                                <label for="SF">SF</label>
+                                <input type="checkbox" name="SF" id="SF" size="40">
                             </div>
                             <div class="form-element">
-                                <label for="password">Password</label>
-                                <input type="password" name="password" id="password" required="">
+                                <label for="action">Action</label>
+                                <input type="checkbox" name="action" id="action" size="40">
                             </div>
                             <div class="form-element">
-                                <label for="rPassword">Repeat password</label>
-                                <input type="password" id="rPassword" required="">
+                                <label for="romance">Romance</label>
+                                <input type="checkbox" name="romance" id="romance" size="40">
                             </div>
                             <div class="form-element">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required="">
+                                <label for="comedy">Comedy</label>
+                                <input type="checkbox" name="comedy" id="comedy" size="40">
+                            </div>
+                            <div class="form-element">
+                                <label for="horror">Horror</label>
+                                <input type="checkbox" name="horror" id="horror" size="40">
+                            </div>
+                            <div class="form-element">
+                                <label for="advent">Adventure</label>
+                                <input type="checkbox" name="advent" id="advent" size="40">
+                            </div>
+                            <div class="form-element">
+                                <label for="fant">Fantasy</label>
+                                <input type="checkbox" name="fant" id="fant" size="40">
                             </div>
                             <div class="form-element">
                                 <input type="submit" value="Submit" onclick="return check(this)">

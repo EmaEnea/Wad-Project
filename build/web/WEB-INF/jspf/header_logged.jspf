@@ -5,13 +5,11 @@
     <ul>
         <li><a href="Home.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="Register.jsp" class="btn btn-danger btn-sm active">
-                <span class="glyphicon glyphicon-registration-mark"></span> Register</a></li>
-        <li><a href="Login.jsp" class="btn btn-danger btn-sm active">
-                <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="LogoutController" class="btn btn-danger btn-sm active">
+        <li><a href="Logout.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <li><a href="Profile.jsp" class="btn btn-danger btn-sm active">
                 <span class="glyphicon glyphicon-user"></span> Profile</a></li>
+        <li><a href="Settings.jsp" class="btn btn-danger btn-sm active">
+                <span class="glyphicon glyphicon-settings"></span> Settings</a></li>
     </ul>
-</nav>
+</nav>>

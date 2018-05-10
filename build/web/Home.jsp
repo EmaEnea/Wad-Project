@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -28,7 +29,15 @@
         </style>
     </head>
     <header class="navigation">
-        <%@include file="/WEB-INF/jspf/header_loged.jspf" %>
+    <% int ok=1; %>
+    <c:if test="${empty  sessionScope.users }"> 
+            <% ok=0; %>*
+            <%@include file="/WEB-INF/jspf/header.jspf" %>
+    </c:if>
+    <% if (ok==1) { %>
+            <% System.out.println("user"); %>
+            <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
+    <% } %>
     </header>
     <body class="background" background="img/64.jpg">
         <section>
