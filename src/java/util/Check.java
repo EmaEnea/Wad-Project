@@ -12,6 +12,20 @@ import java.util.ArrayList;
 
 public class Check {
 
+    public boolean movieExists(String nameMovie) throws ClassNotFoundException, SQLException {
+       Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT name FROM tvguide.movie WHERE name='" + nameMovie +"'";
+        ResultSet rs = instr.executeQuery(sql);
+        while (rs.next()) {
+            String name = rs.getString(1);
+            if (nameMovie.equals(name)) {
+                return true;
+            }
+        }
+        return false; 
+    }
     public boolean userExists(String user) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
