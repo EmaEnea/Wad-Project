@@ -85,7 +85,7 @@ public class Check {
     public void setGenres(String genres, String user) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
-        String sql = "UPDATE tvguide.user SET genres = '" + genres + "' WHERE username='" + user + "'";
+        String sql = "UPDATE tvguide.user SET genre = '" + genres + "' WHERE username='" + user + "'";
         PreparedStatement preparedStmt = con.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }

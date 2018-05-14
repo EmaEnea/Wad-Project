@@ -71,6 +71,10 @@
                     <script>$('#add1').hide();</script>
                     <div class="word">
                         <h2>Profile</h2>
+                        <c:forEach items="${sessionScope.movies}" var="movie">
+                            <c:out value="${sessionScope.name}"/>
+                            ${movie.getName()}<br>
+                        </c:forEach>
                         <button id="show1" onClick="show1()">2015</button>
                         <div>
                             <p style="display:none" id="add1"> Birdman <br> The Theory of Everything <br> Whiplash <br> The Grand Budapest Hotel <br> Big Hero 6 <br> </p>

@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -49,8 +50,11 @@ public class SettingsController extends HttpServlet {
         if (fant != null) {
             genres += " Fantasy";
         }
-        request.getRequestDispatcher("Profile.jsp").forward(request, response);
         add.setGenres(genres, user);
+        dao.MovieDAO m=new  dao.MovieDAO();
+        List<util.Movie> movies=m.getRecomMovies(genres,user);
+        request.getSession().setAttribute("movies", movies);
+        request.getRequestDispatcher("Profile.jsp").forward(request, response);
     }
 
     @Override
