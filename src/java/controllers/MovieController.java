@@ -28,52 +28,45 @@ import util.User;
 @WebServlet(name = "MovieController", urlPatterns = {"/MovieController"})
 public class MovieController extends HttpServlet {
 
-     @PersistenceContext(unitName = "TvGuidePU")
+    @PersistenceContext(unitName = "TvGuidePU")
     private EntityManager em;
-    
+
     @Resource
     private javax.transaction.UserTransaction utx;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException, NotSupportedException, SystemException, RollbackException, HeuristicMixedException, IllegalStateException, SecurityException, HeuristicRollbackException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
         try (PrintWriter out = response.getWriter()) {
             Check checker = new Check();
-            
-            List<String> l = new ArrayList<>();
-            Set<String> param = (Set<String>) request.getParameterMap().keySet();
-            out.println(param);
-            for (String params : param) {
-                l.add(request.getParameter(params));
+            if (!checker.movieExists(request.getParameter("title"))) {
+                try {
+                    utx.begin();
+                    boolean oscar = false;
+                    Movie u = new Movie();
+                    u.setName(request.getParameter("title"));
+                    u.setGenre(request.getParameter("genre"));
+                    u.setChannel(request.getParameter("channel"));
+                    u.setHour(request.getParameter("hour"));
+                    u.setDate(request.getParameter("date"));
+                    u.setOscar(oscar);
+                    u.setRating(Double.parseDouble(request.getParameter("rating")));
+                    if (request.getParameterMap().size()==7) {
+                        oscar = true;
+                        u.setOscar(oscar);
+                        em.persist(u);
+                        utx.commit();
+                    }
+                    else {
+                        em.persist(u);
+                        utx.commit();
+                    }
+                } catch (Exception e) {
+                    Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
+                    throw new RuntimeException(e);
+                }
             }
-         
-          if(!checker.movieExists(l.get(0))){
-              
-               try {
-                 utx.begin();
-                 Movie u = new Movie();
-                 boolean oscar=l.get(5).equals("on") ? true : false;
-                 u.addMovie(l.get(0), l.get(1), l.get(2), l.get(3), l.get(4), oscar, Double.parseDouble(l.get(6)));
-                 em.persist(u);
-                 utx.commit();
-             } catch (Exception e) {
-                 Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
-                 throw new RuntimeException(e);
-        }
-              
-           /*   
-              
-              
-              
-              utx.begin();
-              boolean oscar=l.get(5).equals("on") ? true : false;
-              u.addMovie(l.get(0), l.get(1), l.get(2), l.get(3), l.get(4), oscar, Double.parseDouble(l.get(6)));
-              em.persist(u);
-              utx.commit();*/
-          }
-          request.getRequestDispatcher("Home.jsp").forward(request, response);
+            request.getRequestDispatcher("Home.jsp").forward(request, response);
         }
     }
 
@@ -96,20 +89,20 @@ public class MovieController extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotSupportedException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (SystemException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (RollbackException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (HeuristicMixedException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (IllegalStateException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (SecurityException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (HeuristicRollbackException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SystemException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RollbackException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicMixedException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicRollbackException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -130,20 +123,20 @@ public class MovieController extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NotSupportedException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (SystemException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (RollbackException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (HeuristicMixedException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (IllegalStateException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (SecurityException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (HeuristicRollbackException ex) {
-             Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SystemException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (RollbackException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicMixedException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicRollbackException ex) {
+            Logger.getLogger(MovieController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -155,7 +148,5 @@ public class MovieController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-  
 
 }
