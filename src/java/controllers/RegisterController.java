@@ -28,190 +28,35 @@ public class RegisterController extends HttpServlet {
         try {
             Check checker = new Check();
             User u = new User();
-            List<String> l = new ArrayList<>();
-            Set<String> param = (Set<String>) request.getParameterMap().keySet();
-            for (String params : param) {
-                l.add(request.getParameter(params));
-            }
             utx.begin();
-            for (String par : param) {
-                String user = request.getParameter(par);
-                if ("uname".equals(par)) {
-                    if (checker.userExists(user)) {
-                        request.getRequestDispatcher("Register.jsp").forward(request, response);
-                    } else {
-                        u.setName(l.get(0));
-                        u.setUsername(l.get(1));
-                        u.setPassword(l.get(2));
-                        u.setEmail(l.get(3));
-                        u.setGenre("");
-                        String adminPass = "";
-                        if (l.get(4).equals("on")) {
-                            u.setAdmin(true);
-                            adminPass = l.get(5);
-                        } else {
-                            u.setAdmin(false);
-                        }
-                        if (l.get(4).equals("on") && adminPass.equals("ceparola")) {
-                            em.persist(u);
-                            if (!checker.movieExists("Gravity")) {////aici  va fii numele din input
-                                Movie mo6 = new Movie();
-                                mo6.setName("Gravity");
-                                mo6.setGenre("SF");
-                                mo6.setChannel("Paramount");
-                                mo6.setHour("4 PM");
-                                mo6.setDate("11-08-2018");
-                                mo6.setOscar(true);
-                                mo6.setRating(7.8);
+            if (checker.userExists(request.getParameter("uname"))) {
+                request.getRequestDispatcher("Register.jsp").forward(request, response);
+            } else {
+                u.setName(request.getParameter("name"));
+                u.setUsername(request.getParameter("uname"));
+                u.setPassword(request.getParameter("password"));
+                u.setEmail(request.getParameter("email"));
+                u.setGenre("");
+                String adminPass = "";
 
-                                em.persist(mo6);
-                            }
-                            if (!checker.movieExists("Titanic")) {
-                                Movie mo1 = new Movie();
-                                mo1.setName("Titanic");
-                                mo1.setGenre("Drama,Romance");
-                                mo1.setChannel("ProTV");
-                                mo1.setHour("1 PM");
-                                mo1.setDate("12-08-2018");
-                                mo1.setOscar(true);
-                                mo1.setRating(7.8);
-
-                                em.persist(mo1);
-                            }
-                            if (!checker.movieExists("Avatar")) {
-                                Movie mo5 = new Movie();
-                                mo5.setName("Avatar");
-                                mo5.setGenre("Adventure,Fantasy");
-                                mo5.setChannel("ProTV");
-                                mo5.setHour("7 PM");
-                                mo5.setDate("12-08-2018");
-                                mo5.setOscar(true);
-                                mo5.setRating(7.8);
-
-                                em.persist(mo5);
-                            }
-                            if (!checker.movieExists("Scream")) {
-                                Movie mo2 = new Movie();
-                                mo2.setName("Scream");
-                                mo2.setGenre("Horror");
-                                mo2.setChannel("TNT");
-                                mo2.setHour("10 PM");
-                                mo2.setDate("15-08-2018");
-                                mo2.setOscar(false);
-                                mo2.setRating(7.2);
-
-                                em.persist(mo2);
-                            }
-                            if (!checker.movieExists("Ace Ventura Pet Detective")) {
-                                Movie mo3 = new Movie();
-                                mo3.setName("Ace Ventura Pet Detective");
-                                mo3.setGenre("Comedy");
-                                mo3.setChannel("PrimaTV");
-                                mo3.setHour("5 PM");
-                                mo3.setDate("13-08-2018");
-                                mo3.setOscar(false);
-                                mo3.setRating(6.9);
-
-                                em.persist(mo3);
-                            }
-                            if (!checker.movieExists("Gladiator")) {
-                                Movie mo4 = new Movie();
-                                mo4.setName("Gladiator");
-                                mo4.setGenre("Action,Drama");
-                                mo4.setChannel("Antena1");
-                                mo4.setHour("11 PM");
-                                mo4.setDate("10-08-2018");
-                                mo4.setOscar(true);
-                                mo4.setRating(8.5);
-
-                                em.persist(mo4);
-                            }
-                            utx.commit();
-                            request.getRequestDispatcher("Login.jsp").forward(request, response);
-                            break;
-                        } else if (l.get(4).equals("on") && !adminPass.equals("ceparola")) {
-                            request.getRequestDispatcher("Register.jsp").forward(request, response);
-                            break;
-                        }
+                if (request.getParameterMap().size() == 6) {
+                    u.setAdmin(true);
+                    adminPass = request.getParameter("adpass");
+                    if (request.getParameter("admin").equals("on") && adminPass.equals("ceparola")) {
                         em.persist(u);
-                        if (!checker.movieExists("Gravity")) {////aici  va fii numele din input
-                            Movie mo6 = new Movie();
-                            mo6.setName("Gravity");
-                            mo6.setGenre("SF");
-                            mo6.setChannel("Paramount");
-                            mo6.setHour("4 PM");
-                            mo6.setDate("11-08-2018");
-                            mo6.setOscar(true);
-                            mo6.setRating(7.8);
-
-                            em.persist(mo6);
-                        }
-                        if (!checker.movieExists("Titanic")) {
-                            Movie mo1 = new Movie();
-                            mo1.setName("Titanic");
-                            mo1.setGenre("Drama,Romance");
-                            mo1.setChannel("ProTV");
-                            mo1.setHour("1 PM");
-                            mo1.setDate("12-08-2018");
-                            mo1.setOscar(true);
-                            mo1.setRating(7.8);
-
-                            em.persist(mo1);
-                        }
-                        if (!checker.movieExists("Avatar")) {
-                            Movie mo5 = new Movie();
-                            mo5.setName("Avatar");
-                            mo5.setGenre("Adventure,Fantasy");
-                            mo5.setChannel("ProTV");
-                            mo5.setHour("7 PM");
-                            mo5.setDate("12-08-2018");
-                            mo5.setOscar(true);
-                            mo5.setRating(7.8);
-
-                            em.persist(mo5);
-                        }
-                        if (!checker.movieExists("Scream")) {
-                            Movie mo2 = new Movie();
-                            mo2.setName("Scream");
-                            mo2.setGenre("Horror");
-                            mo2.setChannel("TNT");
-                            mo2.setHour("10 PM");
-                            mo2.setDate("15-08-2018");
-                            mo2.setOscar(false);
-                            mo2.setRating(7.2);
-
-                            em.persist(mo2);
-                        }
-                        if (!checker.movieExists("Ace Ventura Pet Detective")) {
-                            Movie mo3 = new Movie();
-                            mo3.setName("Ace Ventura Pet Detective");
-                            mo3.setGenre("Comedy");
-                            mo3.setChannel("PrimaTV");
-                            mo3.setHour("5 PM");
-                            mo3.setDate("13-08-2018");
-                            mo3.setOscar(false);
-                            mo3.setRating(6.9);
-
-                            em.persist(mo3);
-                        }
-                        if (!checker.movieExists("Gladiator")) {
-                            Movie mo4 = new Movie();
-                            mo4.setName("Gladiator");
-                            mo4.setGenre("Action,Drama");
-                            mo4.setChannel("Antena1");
-                            mo4.setHour("11 PM");
-                            mo4.setDate("10-08-2018");
-                            mo4.setOscar(true);
-                            mo4.setRating(8.5);
-
-                            em.persist(mo4);
-                        }
                         utx.commit();
                         request.getRequestDispatcher("Login.jsp").forward(request, response);
-                        break;
+                    } else if (request.getParameter("admin").equals("on") && !adminPass.equals("ceparola")) {
+                        request.getRequestDispatcher("Register.jsp").forward(request, response);
                     }
+                } else {
+                    u.setAdmin(false);
+                    em.persist(u);
+                    utx.commit();
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
             }
+
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
             throw new RuntimeException(e);
