@@ -16,6 +16,10 @@
         <servlet-name>SettingsController</servlet-name>
         <servlet-class>controllers.SettingsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MovieController</servlet-name>
+        <servlet-class>controllers.MovieController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/RegisterController</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>SettingsController</servlet-name>
         <url-pattern>/SettingsController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MovieController</servlet-name>
+        <url-pattern>/MovieController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

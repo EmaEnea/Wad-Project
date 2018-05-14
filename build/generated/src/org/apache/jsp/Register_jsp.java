@@ -162,9 +162,6 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
  if (ok == 1 && ad==0) { 
       out.write("\r\n");
       out.write("        ");
- System.out.println("user"); 
-      out.write("\r\n");
-      out.write("        ");
       out.write("<div class=\"pic\">\r\n");
       out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\r\n");
       out.write("</div>\r\n");
@@ -172,7 +169,7 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <ul>\r\n");
       out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\r\n");
       out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\r\n");
-      out.write("        <li><a href=\"Logout.jsp\" class=\"btn btn-danger btn-sm active\">\r\n");
+      out.write("        <li><a href=\"LogoutController\" class=\"btn btn-danger btn-sm active\">\r\n");
       out.write("                <span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\r\n");
       out.write("        <li><a href=\"Profile.jsp\" class=\"btn btn-danger btn-sm active\">\r\n");
       out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\r\n");
@@ -188,18 +185,18 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
  if (ok == 1 && ad==1) { 
       out.write("\r\n");
       out.write("        ");
-      out.write("<div class=\"pic\">\n");
-      out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\n");
-      out.write("</div>\n");
-      out.write("<nav>\n");
-      out.write("    <ul>\n");
-      out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\n");
-      out.write("        <li><a href=\"LogoutController\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\n");
-      out.write("        <li><a href=\"AdminProfile.jsp\" class=\"btn btn-danger btn-sm active\">\n");
-      out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\n");
-      out.write("    </ul>\n");
+      out.write("<div class=\"pic\">\r\n");
+      out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\r\n");
+      out.write("</div>\r\n");
+      out.write("<nav>\r\n");
+      out.write("    <ul>\r\n");
+      out.write("        <li><a href=\"Home.jsp\" class=\"btn btn-danger btn-sm active\">\r\n");
+      out.write("                <span class=\"glyphicon glyphicon-home\"></span> Home</a></li>\r\n");
+      out.write("        <li><a href=\"LogoutController\" class=\"btn btn-danger btn-sm active\">\r\n");
+      out.write("                <span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\r\n");
+      out.write("        <li><a href=\"AdminProfile.jsp\" class=\"btn btn-danger btn-sm active\">\r\n");
+      out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\r\n");
+      out.write("    </ul>\r\n");
       out.write("</nav>>");
       out.write("\r\n");
       out.write("        ");

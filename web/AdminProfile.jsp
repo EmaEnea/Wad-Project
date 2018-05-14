@@ -71,7 +71,7 @@
                     <div class="word">
                         <h2>Profile</h2><br>
                         <h3>Add new movie</h3>
-                        <form id="reg" method="POST" action="  "> 
+                        <form id="reg" method="POST" action="MovieController"> 
                             <div class="form-element">
                                 <label for="title">Title</label>
                                 <input type="text" name="title" id="name" size="40" required="">
@@ -86,7 +86,7 @@
                             </div>
                             <div class="form-element">
                                 <label for="hour">Hour</label>
-                                <input type="text" name="genre" id="genre" required="">
+                                <input type="text" name="hour" id="hour" required="">
                             </div>
                             <div class="form-element">
                                 <label for="date">Date</label>

@@ -50,6 +50,7 @@ public class LoginController extends HttpServlet {
                     request.getSession().setAttribute("admin","1");
                     request.getRequestDispatcher("AdminProfile.jsp").forward(request, response);
                 } else {
+                    request.getSession().setAttribute("admin",null);
                     request.getRequestDispatcher("Profile.jsp").forward(request, response);
                 }
             }
