@@ -1,9 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -15,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import util.User;
 import util.Check;
-import util.Movie;
 
 public class RegisterController extends HttpServlet {
 
@@ -39,7 +35,7 @@ public class RegisterController extends HttpServlet {
                 u.setGenre("");
                 String adminPass = "";
 
-                if (request.getParameterMap().size() == 6) {
+                if (request.getParameterMap().size() == 7) {
                     u.setAdmin(true);
                     adminPass = request.getParameter("adpass");
                     if (request.getParameter("admin").equals("on") && adminPass.equals("ceparola")) {

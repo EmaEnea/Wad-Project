@@ -12,7 +12,6 @@ import java.sql.SQLException;
 public class Check {
 
     public boolean movieExists(String nameMovie) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
         String sql = "SELECT name FROM tvguide.movie WHERE name='" + nameMovie + "'";
@@ -27,7 +26,6 @@ public class Check {
     }
 
     public boolean userExists(String user) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
         String sql = "SELECT username FROM tvguide.user WHERE username='" + user + "'";
@@ -42,7 +40,6 @@ public class Check {
     }
 
     public boolean userExists2(String user, String pass) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
         pass = getHash(pass);
@@ -52,7 +49,6 @@ public class Check {
     }
 
     public boolean isAdmin(String user) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         java.sql.Statement instr = con.createStatement();
         String sql = "SELECT username FROM tvguide.user WHERE username='" + user + "' AND administrator='" + 1 + "'";
@@ -83,7 +79,6 @@ public class Check {
     }
 
     public void setGenres(String genres, String user) throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
         Connection con = DBConnection.getConnection();
         String sql = "UPDATE tvguide.user SET genre = '" + genres + "' WHERE username='" + user + "'";
         PreparedStatement preparedStmt = con.prepareStatement(sql);

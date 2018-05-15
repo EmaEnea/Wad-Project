@@ -11,7 +11,7 @@
     </head>
     <header class="navigation">
         <% int ok = 1;
-        int ad = 1; %>
+            int ad = 1; %>
         <c:if test="${empty  sessionScope.users }"> 
             <% ok = 0; %>
             <%@include file="/WEB-INF/jspf/header.jspf" %>
@@ -19,10 +19,10 @@
         <c:if test="${empty  sessionScope.admin }"> 
             <% ad = 0; %>
         </c:if>
-        <% if (ok == 1 && ad==0) { %>
+        <% if (ok == 1 && ad == 0) { %>
         <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
         <% }%>
-        <% if (ok == 1 && ad==1) { %>
+        <% if (ok == 1 && ad == 1) { %>
         <%@include file="/WEB-INF/jspf/header_admin.jspf" %>
         <% }%>
     </header>
@@ -40,13 +40,17 @@
                 </div>
                 <div class="right">
                     <br></br><br>
-                    <script>$('#add1').hide();</script>
+                    <script>
+                        $('#add1').hide();
+                    </script>
                     <div class="word">
-                        <h2>Profile</h2>
+                        <h2>Profile</h2><br>
                         <c:forEach items="${sessionScope.movies}" var="movie">
                             <c:out value="${sessionScope.name}"/>
                             ${movie.getName()}<br>
-                        </c:forEach>
+                        </c:forEach><br>
+                        <h3>5 winning oscar movies</h3>
+                        <h4>Choose year</h4>
                         <button id="show1" onClick="show1()">2015</button>
                         <div>
                             <p style="display:none" id="add1"> Birdman <br> The Theory of Everything <br> Whiplash <br> The Grand Budapest Hotel <br> Big Hero 6 <br> </p>

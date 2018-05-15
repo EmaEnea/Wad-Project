@@ -65,33 +65,14 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <meta charset=\"UTF-8\">\r\n");
       out.write("        <title></title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"bootstrap.css\"/>\r\n");
+      out.write("        <script src=\"jquery-3.3.1.js\"></script>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"style.css\"/>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">\r\n");
-      out.write("        <style>\r\n");
-      out.write("            button{\r\n");
-      out.write("                background-color:pink;\r\n");
-      out.write("                box-shadow: inset 4px 4px 8px 0px #ffffff,4px 4px 8px 0px #ffb3b3;\r\n");
-      out.write("                border: 1px solid black;\r\n");
-      out.write("                font-size: 15px;\r\n");
-      out.write("                border-radius:5px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .form button{\r\n");
-      out.write("                background-color:pink;\r\n");
-      out.write("                box-shadow: inset 4px 4px 8px 0px #ffffff,4px 4px 8px 0px #ffb3b3;\r\n");
-      out.write("                border: 1px solid black;\r\n");
-      out.write("                font-size: 20px;\r\n");
-      out.write("                border-radius:5px;\r\n");
-      out.write("            }\r\n");
-      out.write("            .cookie {\r\n");
-      out.write("                padding-left:30px;\r\n");
-      out.write("                padding-bottom:15px;\r\n");
-      out.write("            }\r\n");
-      out.write("        </style>\r\n");
       out.write("    </head>\r\n");
       out.write("    <header class=\"navigation\">\r\n");
       out.write("        ");
  int ok = 1;
-        int ad = 1; 
+            int ad = 1; 
       out.write("\r\n");
       out.write("        ");
       //  c:if
@@ -159,7 +140,7 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
       out.write("\r\n");
       out.write("        ");
- if (ok == 1 && ad==0) { 
+ if (ok == 1 && ad == 0) { 
       out.write("\r\n");
       out.write("        ");
       out.write("<div class=\"pic\">\r\n");
@@ -182,7 +163,7 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
  }
       out.write("\r\n");
       out.write("        ");
- if (ok == 1 && ad==1) { 
+ if (ok == 1 && ad == 1) { 
       out.write("\r\n");
       out.write("        ");
       out.write("<div class=\"pic\">\r\n");
@@ -213,22 +194,13 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("                <br>\r\n");
-      out.write("                <div class=\"left\">\r\n");
-      out.write("                    <img src=\"https://open-stand.org/wp-content/uploads/2016/04/International-Union-of-Cinemas-Calls-for-Open-Standards-in-the-Cinema-Industry.jpg\" alt=\"cinema\" width=\"260\">\r\n");
-      out.write("                    <h4>Cele mai aşteptate filme în 2018</h4>\r\n");
-      out.write("                    <h5>La început de decembrie, am scris despre filmele cu potenţial la festivalurile cinematografice din anul 2018. Insa noul an vine la pachet cu mult mai multe titluri faine.</h5>\r\n");
-      out.write("                    <h5>Tocmai din acest motiv m-am gândit să fac o scurtă trecere în revistă a blockbusterelor care, din punctul meu de vedere, vor defini 2018.</h5>\r\n");
-      out.write("                    <img src=\"https://i.ytimg.com/vi/FDbtaYjF5dQ/maxresdefault.jpg\" alt=\"world\" width=\"260\">\r\n");
-      out.write("                    <h4>Recomandări TV. Lumi ieșite din comun</h4>\r\n");
-      out.write("                    <h5>Serial SF. Westworld 2, premieră luni, 23 aprilie, ora 20, HBO</h5>\r\n");
-      out.write("                    <h5>Romance distopic. Homarul (2015) marţi, 24 aprilie, ora 16:35,  Digi Film</h5>\r\n");
-      out.write("                    <h5>Mister. O terapie pentru viaţă miercuri, 25 aprilie, ora 01:15, HBO</h5>\r\n");
+      out.write("                <div class=\"left\" id=\"left\">\r\n");
       out.write("                </div>\r\n");
       out.write("                <div class=\"right\">\r\n");
       out.write("                    <br></br><br>\r\n");
       out.write("                    <div class=\"word\">\r\n");
       out.write("                        <h1>Registration form</h1>   \r\n");
-      out.write("                        <form id=\"reg\" method=\"POST\" action=\"RegisterController\"> \r\n");
+      out.write("                        <form id=\"reg\" name=\"myForm\" method=\"POST\" action=\"RegisterController\"> \r\n");
       out.write("                            <div class=\"form-element\">\r\n");
       out.write("                                <label for=\"name\">Name</label>\r\n");
       out.write("                                <input type=\"text\" name=\"name\" id=\"name\" size=\"40\" required=\"\">\r\n");
@@ -242,8 +214,10 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <input type=\"password\" name=\"password\" id=\"password\" required=\"\">\r\n");
       out.write("                            </div>\r\n");
       out.write("                            <div class=\"form-element\">\r\n");
-      out.write("                                <label for=\"rPassword\">Repeat password</label>\r\n");
-      out.write("                                <input type=\"password\" id=\"rPassword\" required=\"\">\r\n");
+      out.write("                                <label for=\"rPassword\">Confirm Pass</label>\r\n");
+      out.write("                                <input type=\"password\" name=\"rPassword\" id=\"rPassword\" onkeyup=\"checkPass();\r\n");
+      out.write("                                        return false;\">\r\n");
+      out.write("                                <span id=\"confirmMessage\" class=\"confirmMessage\"></span>\r\n");
       out.write("                            </div>\r\n");
       out.write("                            <div class=\"form-element\">\r\n");
       out.write("                                <label for=\"email\">Email</label>\r\n");
@@ -263,6 +237,23 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>  \r\n");
       out.write("                        </form>\r\n");
       out.write("                        <script>\r\n");
+      out.write("                            function checkPass()\r\n");
+      out.write("                            {\r\n");
+      out.write("                                var pass1 = document.getElementById('password');\r\n");
+      out.write("                                var pass2 = document.getElementById('rPassword');\r\n");
+      out.write("                                var message = document.getElementById('confirmMessage');\r\n");
+      out.write("                                var goodColor = \"#66cc66\";\r\n");
+      out.write("                                var badColor = \"#ff6666\";\r\n");
+      out.write("                                if (pass1.value == pass2.value) {\r\n");
+      out.write("                                    pass2.style.backgroundColor = goodColor;\r\n");
+      out.write("                                    message.style.color = goodColor;\r\n");
+      out.write("                                    message.innerHTML = \"Passwords Match!\"\r\n");
+      out.write("                                } else {\r\n");
+      out.write("                                    pass2.style.backgroundColor = badColor;\r\n");
+      out.write("                                    message.style.color = badColor;\r\n");
+      out.write("                                    message.innerHTML = \"Passwords Do Not Match!\"\r\n");
+      out.write("                                }\r\n");
+      out.write("                            }\r\n");
       out.write("                            $('#adpass').hide();\r\n");
       out.write("                            function yesnoCheck() {\r\n");
       out.write("                                var checkBox = document.getElementById(\"admin\");\r\n");
@@ -278,6 +269,9 @@ public final class Register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("        </section>\r\n");
+      out.write("        <script>\r\n");
+      out.write("            $(\"#left\").load(\"News.txt\");\r\n");
+      out.write("        </script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
