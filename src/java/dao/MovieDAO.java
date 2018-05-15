@@ -20,6 +20,26 @@ public class MovieDAO {
 
     public MovieDAO() {
     }
+    
+    public List<util.Movie> getMovies() throws SQLException {
+        List<util.Movie> movies = new ArrayList<>();
+        java.sql.Statement instr = DBConnection.getConnection().createStatement();
+        String sql = "SELECT  * FROM tvguide.movie ORDER BY rating DESC";
+        ResultSet rs = instr.executeQuery(sql);
+        while (rs.next()) {
+            Movie m = new Movie();
+            m.setChannel(rs.getString("channel"));
+            m.setDate(rs.getString("dates"));
+            m.setGenre(rs.getString("genre"));
+            m.setHour(rs.getString("hours"));
+            m.setId(rs.getLong("id"));
+            m.setName(rs.getString("name"));
+            m.setOscar(rs.getBoolean("oscar"));
+            m.setRating(rs.getDouble("rating"));
+            movies.add(m);
+        }
+        return movies;
+    }
 
     public List<util.Movie> getRecomMovies(String preferred, String user) throws SQLException, ClassNotFoundException {
         String[] pref = preferred.split(" ");
