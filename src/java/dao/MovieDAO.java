@@ -20,7 +20,7 @@ public class MovieDAO {
 
     public MovieDAO() {
     }
-    
+
     public List<util.Movie> getMovies() throws SQLException {
         List<util.Movie> movies = new ArrayList<>();
         java.sql.Statement instr = DBConnection.getConnection().createStatement();
@@ -35,6 +35,8 @@ public class MovieDAO {
             m.setId(rs.getLong("id"));
             m.setName(rs.getString("name"));
             m.setOscar(rs.getBoolean("oscar"));
+            m.setReview(rs.getString("review"));
+            m.setImage(rs.getString("image"));
             m.setRating(rs.getDouble("rating"));
             movies.add(m);
         }
@@ -45,16 +47,16 @@ public class MovieDAO {
         String[] pref = preferred.split(" ");
         List<util.Movie> movies = new ArrayList<>();
         java.sql.Statement instr = DBConnection.getConnection().createStatement();
-        String sql = "SELECT  * FROM tvguide.movie";
+        String sql = "SELECT  * FROM tvguide.movie ORDER BY rating DESC";
         ResultSet rs = instr.executeQuery(sql);
         while (rs.next()) {
             String genres = rs.getString("genre");
             String[] genreSeparated = genres.split(",");
-            for (int i = 1; i < pref.length; i++) {
+            /*for (int i = 1; i < pref.length; i++) {
                 for (int j = 0; j < genreSeparated.length; j++) {
                     System.out.println(pref[i] + " " + genreSeparated[j] + " " + rs.getString("name"));
                 }
-            }
+            }*/
             for (int i = 1; i < pref.length; i++) {
                 for (int j = 0; j < genreSeparated.length; j++) {
                     if (pref[i].equals(genreSeparated[j])) {
@@ -66,6 +68,8 @@ public class MovieDAO {
                         m.setId(rs.getLong("id"));
                         m.setName(rs.getString("name"));
                         m.setOscar(rs.getBoolean("oscar"));
+                        m.setReview(rs.getString("review"));
+                        m.setImage(rs.getString("image"));
                         m.setRating(rs.getDouble("rating"));
                         movies.add(m);
                         i = pref.length - 1;

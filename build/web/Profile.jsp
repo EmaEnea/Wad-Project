@@ -47,7 +47,7 @@
                         <h2>Profile</h2><br>
                         <c:forEach items="${sessionScope.movies}" var="movie">
                             <c:out value="${sessionScope.name}"/>
-                            ${movie.getName()}<br>
+                            <img src="${movie.getImage()}" width="200"> ${movie.getName()}  rating: ${movie.getRating()}<br><br>
                         </c:forEach><br>
                         <h3>5 winning oscar movies</h3>
                         <h4>Choose year</h4>

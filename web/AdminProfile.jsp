@@ -69,6 +69,10 @@
                                 <input type="checkbox" name="oscar" id="oscar">
                             </div> 
                             <div class="form-element">
+                                <label for="image">Image url</label>
+                                <input type="text" name="image" id="image">
+                            </div> 
+                            <div class="form-element">
                                 <label for="rating">Rating</label>
                                 <input type="text" name="rating" id="rating" required="">
                             </div>

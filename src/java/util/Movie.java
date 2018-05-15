@@ -19,7 +19,9 @@ public class Movie implements Serializable {
     private String channel;
     private String hours;
     private String dates;
+    private String image;
     private boolean oscar;
+    private String review;
     private double rating;
 
     public double getRating() {
@@ -28,6 +30,18 @@ public class Movie implements Serializable {
 
     public void setRating(double rating) {
         this.rating = rating;
+    }
+    
+    public String getImage() {
+        return image;
+    }
+    
+    public String getReview() {
+        return review;
+    }
+
+    public void setImage(String img) {
+        this.image=img;
     }
     
     public boolean isOscar() {
@@ -40,6 +54,10 @@ public class Movie implements Serializable {
 
     public String getName() {
         return name;
+    }
+    
+    public void setReview(String rev) {
+        this.review=rev;
     }
 
     public void setName(String name) {

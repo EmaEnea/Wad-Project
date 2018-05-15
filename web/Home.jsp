@@ -11,7 +11,7 @@
     </head>
     <header class="navigation">
         <% int ok = 1;
-        int ad = 1; %>
+            int ad = 1; %>
         <c:if test="${empty  sessionScope.users }"> 
             <% ok = 0; %>
             <%@include file="/WEB-INF/jspf/header.jspf" %>
@@ -19,10 +19,10 @@
         <c:if test="${empty  sessionScope.admin }"> 
             <% ad = 0; %>
         </c:if>
-        <% if (ok == 1 && ad==0) { %>
+        <% if (ok == 1 && ad == 0) { %>
         <%@include file="/WEB-INF/jspf/header_logged.jspf" %>
         <% }%>
-        <% if (ok == 1 && ad==1) { %>
+        <% if (ok == 1 && ad == 1) { %>
         <%@include file="/WEB-INF/jspf/header_admin.jspf" %>
         <% }%>
     </header>
@@ -42,8 +42,12 @@
                     <br></br><br>
                     <div class="word">
                         <h2>Home</h2>
-                        
-
+                        <h3>TV guide: your no. 1 website for the best TV movie options</h3>
+                        <h4>Get alerts with your favorite movies and keep up to date on everything that matters.<br>Take a peek at the upcoming films: </h4>
+                        <c:forEach items="${applicationScope.allMovies}" var="movie">
+                            <img src="${movie.getImage()}" width="200"> ${movie.getName()}  rating: ${movie.getRating()}<br><br>
+                        </c:forEach><br>
+                        <button type="button">Review</button>
                     </div>
                 </div>
             </div>
