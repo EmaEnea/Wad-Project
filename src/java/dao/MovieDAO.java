@@ -38,6 +38,7 @@ public class MovieDAO {
             m.setReview(rs.getString("review"));
             m.setImage(rs.getString("image"));
             m.setRating(rs.getDouble("rating"));
+            m.setReview(rs.getString("review"));
             movies.add(m);
         }
         return movies;
@@ -52,11 +53,6 @@ public class MovieDAO {
         while (rs.next()) {
             String genres = rs.getString("genre");
             String[] genreSeparated = genres.split(",");
-            /*for (int i = 1; i < pref.length; i++) {
-                for (int j = 0; j < genreSeparated.length; j++) {
-                    System.out.println(pref[i] + " " + genreSeparated[j] + " " + rs.getString("name"));
-                }
-            }*/
             for (int i = 1; i < pref.length; i++) {
                 for (int j = 0; j < genreSeparated.length; j++) {
                     if (pref[i].equals(genreSeparated[j])) {

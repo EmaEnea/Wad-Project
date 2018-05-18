@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Review_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -61,22 +61,22 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta charset=\"UTF-8\">\r\n");
-      out.write("        <title></title>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"bootstrap.css\"/>\r\n");
-      out.write("        <script src=\"jquery-3.3.1.js\"></script>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"style.css\"/>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <header class=\"navigation\">\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta charset=\"UTF-8\">\n");
+      out.write("        <title></title>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"bootstrap.css\"/>\n");
+      out.write("        <script src=\"jquery-3.3.1.js\"></script>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"style.css\"/>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">\n");
+      out.write("    </head>\n");
+      out.write("    <header class=\"navigation\">\n");
       out.write("        ");
  int ok = 1;
             int ad = 1; 
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
       //  c:if
       org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
@@ -86,10 +86,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
       if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write(" \r\n");
+          out.write(" \n");
           out.write("            ");
  ok = 0; 
-          out.write("\r\n");
+          out.write("\n");
           out.write("            ");
           out.write("<div class=\"pic\">\r\n");
           out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\r\n");
@@ -104,7 +104,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("                <span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\r\n");
           out.write("    </ul>\r\n");
           out.write("</nav>");
-          out.write("\r\n");
+          out.write("\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -116,7 +116,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
       //  c:if
       org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
@@ -126,10 +126,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
       if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write(" \r\n");
+          out.write(" \n");
           out.write("            ");
  ad = 0; 
-          out.write("\r\n");
+          out.write("\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -141,10 +141,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       }
       _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
  if (ok == 1 && ad == 0) { 
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
       out.write("<div class=\"pic\">\r\n");
       out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\r\n");
@@ -161,13 +161,13 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <span class=\"glyphicon glyphicon-settings\"></span> Settings</a></li>\r\n");
       out.write("    </ul>\r\n");
       out.write("</nav>>");
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
  }
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
  if (ok == 1 && ad == 1) { 
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
       out.write("<div class=\"pic\">\r\n");
       out.write("    <img src=\"img/77.jpg\" width=\"200\" height=\"124\">\r\n");
@@ -182,47 +182,48 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <span class=\"glyphicon glyphicon-user\"></span> Profile</a></li>\r\n");
       out.write("    </ul>\r\n");
       out.write("</nav>>");
-      out.write("\r\n");
+      out.write("\n");
       out.write("        ");
  }
-      out.write("\r\n");
-      out.write("    </header>\r\n");
-      out.write("    <body class=\"background\" background=\"img/64.jpg\">\r\n");
-      out.write("        <section>\r\n");
-      out.write("            <div class=\"content\">\r\n");
-      out.write("                <div class=\"box\">\r\n");
-      out.write("                    <div class=\"container\">\r\n");
-      out.write("                        <input type=\"search\" id=\"search\" placeholder=\"Search...\" />\r\n");
-      out.write("                        <button class=\"icon\"><i class=\"fa fa-search\"></i></button>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <br>\r\n");
-      out.write("                <div class=\"left\" id=\"left\">\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"right\">\r\n");
-      out.write("                    <br></br><br>\r\n");
-      out.write("                    <div class=\"word\">\r\n");
-      out.write("                        <h2>Home</h2>\r\n");
-      out.write("                        <h3>TV guide: your no. 1 website for the best TV movie options</h3>\r\n");
-      out.write("                        <h4>Get alerts with your favorite movies and keep up to date on everything that matters.<br>Take a peek at the upcoming films: </h4>\r\n");
-      out.write("                        <table>\r\n");
+      out.write("\n");
+      out.write("    </header>\n");
+      out.write("    <body class=\"background\" background=\"img/64.jpg\">\n");
+      out.write("        <section>\n");
+      out.write("            <div class=\"content\">\n");
+      out.write("                <div class=\"box\">\n");
+      out.write("                    <div class=\"container\">\n");
+      out.write("                        <input type=\"search\" id=\"search\" placeholder=\"Search...\" />\n");
+      out.write("                        <button class=\"icon\"><i class=\"fa fa-search\"></i></button>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <br>\n");
+      out.write("                <div class=\"left\" id=\"left\">\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"right\">\n");
+      out.write("                    <br></br><br>\n");
+      out.write("                    <div class=\"word\">\n");
+      out.write("                        <h2>Review a movie</h2>\n");
+      out.write("                        <form method=\"POST\" action=\"ReviewController\">\n");
+      out.write("                        <select name=\"movie\" id=\"movie\">\n");
+      out.write("                            <option value=\"\" disabled selected>Select a movie</option>\n");
       out.write("                            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("                        </table>\r\n");
-      out.write("                        <br>");
-      if (_jspx_meth_c_if_4(_jspx_page_context))
-        return;
-      out.write("\r\n");
-      out.write("                    </div>\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </section>\r\n");
-      out.write("        <script>\r\n");
-      out.write("            $(\"#left\").load(\"News.txt\");\r\n");
-      out.write("        </script>\r\n");
-      out.write("    </body>\r\n");
+      out.write("\n");
+      out.write("                        </select> \n");
+      out.write("                        <br><br>\n");
+      out.write("                        <textarea rows=\"4\" cols=\"50\" placeholder=\"Please type your review here\" name=\"review\" id=\"review\"></textarea>\n");
+      out.write("                        <br><br>\n");
+      out.write("                        <input type=\"submit\" value=\"Submit\">\n");
+      out.write("                        </form>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </section>\n");
+      out.write("        <script>\n");
+      out.write("            $(\"#left\").load(\"News.txt\");\n");
+      out.write("        </script>\n");
+      out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -252,28 +253,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write("\r\n");
-          out.write("                                <tr>\r\n");
-          out.write("                                    <td rowspan=\"3\"><img src=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getImage()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("\" width=\"200\"></td>\r\n");
-          out.write("                                    <td>");
+          out.write("\n");
+          out.write("                                <option value=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td> \r\n");
-          out.write("                                </tr> \r\n");
-          out.write("                                <tr><td>Rating: ");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getRating()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</td></tr>\r\n");
-          out.write("                                ");
-          if (_jspx_meth_c_if_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-            return true;
-          out.write("\r\n");
-          out.write("                                ");
-          if (_jspx_meth_c_if_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-            return true;
-          out.write("\r\n");
-          out.write("                                <tr><td><br></td></tr>\r\n");
-          out.write("                                    ");
+          out.write('"');
+          out.write('>');
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</option>\n");
+          out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -290,92 +277,6 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_th_c_forEach_0.doFinally();
       _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
     }
-    return false;
-  }
-
-  private boolean _jspx_meth_c_if_2(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_2 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_if_2.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_if_2.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getReview()!=null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-    int _jspx_eval_c_if_2 = _jspx_th_c_if_2.doStartTag();
-    if (_jspx_eval_c_if_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      do {
-        out.write("\r\n");
-        out.write("                                    <tr><td>Reviews: ");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getReview()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-        out.write("</td></tr>\r\n");
-        out.write("                                ");
-        int evalDoAfterBody = _jspx_th_c_if_2.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-    }
-    if (_jspx_th_c_if_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
-      return true;
-    }
-    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_2);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_if_3(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_3 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_if_3.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_if_3.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getReview()==null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-    int _jspx_eval_c_if_3 = _jspx_th_c_if_3.doStartTag();
-    if (_jspx_eval_c_if_3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      do {
-        out.write("\r\n");
-        out.write("                                    <tr><td>Reviews: No reviews yet</td></tr>\r\n");
-        out.write("                                ");
-        int evalDoAfterBody = _jspx_th_c_if_3.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-    }
-    if (_jspx_th_c_if_3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
-      return true;
-    }
-    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_3);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_if_4(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:if
-    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_4 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
-    _jspx_th_c_if_4.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_4.setParent(null);
-    _jspx_th_c_if_4.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty  sessionScope.users }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
-    int _jspx_eval_c_if_4 = _jspx_th_c_if_4.doStartTag();
-    if (_jspx_eval_c_if_4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      do {
-        out.write(" \r\n");
-        out.write("                            <a href=\"Review.jsp\" class=\"btn btn-default\">Add a review</a>\r\n");
-        out.write("                        ");
-        int evalDoAfterBody = _jspx_th_c_if_4.doAfterBody();
-        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
-          break;
-      } while (true);
-    }
-    if (_jspx_th_c_if_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_4);
-      return true;
-    }
-    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_4);
     return false;
   }
 }

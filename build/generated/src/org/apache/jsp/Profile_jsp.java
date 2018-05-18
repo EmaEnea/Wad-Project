@@ -296,9 +296,13 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("\r\n");
-          out.write("                            ");
+          out.write("                            <img src=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getImage()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" width=\"200\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("<br>\r\n");
+          out.write("  rating: ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getRating()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("<br><br>\r\n");
           out.write("                        ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

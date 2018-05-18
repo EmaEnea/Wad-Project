@@ -41,28 +41,19 @@
                 <div class="right">
                     <br></br><br>
                     <div class="word">
-                        <h2>Home</h2>
-                        <h3>TV guide: your no. 1 website for the best TV movie options</h3>
-                        <h4>Get alerts with your favorite movies and keep up to date on everything that matters.<br>Take a peek at the upcoming films: </h4>
-                        <table>
+                        <h2>Review a movie</h2>
+                        <form method="POST" action="ReviewController">
+                        <select name="movie" id="movie">
+                            <option value="" disabled selected>Select a movie</option>
                             <c:forEach items="${applicationScope.allMovies}" var="movie">
-                                <tr>
-                                    <td rowspan="3"><img src="${movie.getImage()}" width="200"></td>
-                                    <td>${movie.getName()}</td> 
-                                </tr> 
-                                <tr><td>Rating: ${movie.getRating()}</td></tr>
-                                <c:if test="${movie.getReview()!=null}">
-                                    <tr><td>Reviews: ${movie.getReview()}</td></tr>
-                                </c:if>
-                                <c:if test="${movie.getReview()==null}">
-                                    <tr><td>Reviews: No reviews yet</td></tr>
-                                </c:if>
-                                <tr><td><br></td></tr>
-                                    </c:forEach>
-                        </table>
-                        <br><c:if test="${not empty  sessionScope.users }"> 
-                            <a href="Review.jsp" class="btn btn-default">Add a review</a>
-                        </c:if>
+                                <option value="${movie.getName()}">${movie.getName()}</option>
+                            </c:forEach>
+                        </select> 
+                        <br><br>
+                        <textarea rows="4" cols="50" placeholder="Please type your review here" name="review" id="review"></textarea>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                        </form>
                     </div>
                 </div>
             </div>

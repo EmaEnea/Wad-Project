@@ -16,6 +16,7 @@ public class MovieListener implements ServletContextListener {
         try {
             movies = m.getMovies();
             sce.getServletContext().setAttribute("allMovies", movies);
+            System.out.println(movies.get(0).getReview());
         } catch (SQLException ex) {
             Logger.getLogger(MovieListener.class.getName()).log(Level.SEVERE, null, ex);
         }

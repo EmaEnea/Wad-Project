@@ -1,10 +1,10 @@
 SMAP
-Home_jsp.java
+Review_jsp.java
 JSP
 *S JSP
 *F
-+ 0 Home.jsp
-Home.jsp
++ 0 Review.jsp
+Review.jsp
 + 1 header.jspf
 WEB-INF/jspf/header.jspf
 + 2 header_logged.jspf
@@ -35,21 +35,8 @@ WEB-INF/jspf/header_admin.jspf
 26#0:185
 27:186,3
 28,21:189
-48:245,11
-49:256
-50,2:257,3
-52:263
-53:264,3
-54:267
-54:301,8
-55:309,3
-56:312
-56,2:270
-57:331,8
-58,2:339
-59,3:274
-61,3:212
-63:359,8
-64,2:367
-65,10:217
+48:246,11
+49:257,6
+50:263
+50,16:212
 *E

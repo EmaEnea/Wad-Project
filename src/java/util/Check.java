@@ -84,4 +84,19 @@ public class Check {
         PreparedStatement preparedStmt = con.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }
+    
+    public void addReview(String review, String movie) throws SQLException{
+        Connection con = DBConnection.getConnection();
+        String sql="SELECT review FROM tvguide.movie WHERE name='"+movie+"'";
+        String update;
+        ResultSet rs = con.createStatement().executeQuery(sql);
+        rs.next();
+        if(rs.getString("review")!=null){
+                String[] reviews=rs.getString(1).split("\"");
+                update = "UPDATE tvguide.movie SET review='\""+review+"\", \""+reviews[1]+"\"' WHERE name='"+movie+"'";  
+            } 
+        else update = "UPDATE tvguide.movie SET review='\""+review+"\"' WHERE name='"+movie+"'";   
+        PreparedStatement preparedStmt = con.prepareStatement(update);
+        preparedStmt.executeUpdate();
+    }
 }
