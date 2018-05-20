@@ -23,6 +23,15 @@ public class User implements Serializable {
     private String email;
     private boolean administrator;
     private String genre;
+    private String movies;
+
+    public String getMovies() {
+        return movies;
+    }
+
+    public void setMovies(String movies) {
+        this.movies = movies;
+    }
 
     public static String getHash(String password) {
         MessageDigest digest = null;

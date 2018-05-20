@@ -85,6 +85,46 @@ public class Check {
         preparedStmt.executeUpdate();
     }
     
+    public void setNotifications(String movies, String user) throws ClassNotFoundException, SQLException {
+        Connection con = DBConnection.getConnection();
+        String sql = "UPDATE tvguide.user SET movies = '" + movies + "' WHERE username='" + user + "'";
+        PreparedStatement preparedStmt = con.prepareStatement(sql);
+        preparedStmt.executeUpdate();
+    }
+    public String getDate(String movie) throws ClassNotFoundException, SQLException {
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT dates FROM tvguide.movie WHERE name='" + movie + "'";
+        ResultSet rs = instr.executeQuery(sql);
+        return  rs.next() ?  rs.getString(1).toString() : "" ;
+        
+    }
+    public String getHour(String movie) throws ClassNotFoundException, SQLException {
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT hours FROM tvguide.movie WHERE name='" + movie + "'";
+        ResultSet rs = instr.executeQuery(sql);
+        return  rs.next() ?  rs.getString(1).toString() : "" ;
+        
+    }
+    public String getChannel(String movie) throws ClassNotFoundException, SQLException {
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT channel FROM tvguide.movie WHERE name='" + movie + "'";
+        ResultSet rs = instr.executeQuery(sql);
+        return  rs.next() ?  rs.getString(1).toString() : "" ;
+        
+    }
+    public String getUserMovies(String username) throws ClassNotFoundException, SQLException {
+        Connection con = DBConnection.getConnection();
+        java.sql.Statement instr = con.createStatement();
+        String sql = "SELECT movies FROM tvguide.user WHERE username='" + username + "'";
+        ResultSet rs = instr.executeQuery(sql);
+        return  rs.next() || rs !=null ?  rs.getString(1).toString() : "" ;
+  
+    }
+    
+    
     public void addReview(String review, String movie) throws SQLException{
         Connection con = DBConnection.getConnection();
         String sql="SELECT review FROM tvguide.movie WHERE name='"+movie+"'";

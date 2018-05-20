@@ -209,10 +209,14 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </script>\r\n");
       out.write("                    <div class=\"word\">\r\n");
       out.write("                        <h2>Profile</h2><br>\r\n");
-      out.write("                        ");
+      out.write("                        <form method=\"POST\" action=\"NotificationController\">\r\n");
+      out.write("                            <p id=\"notif\" style=\"font-weight: bold\">Follow your favorite movies!</p>\r\n");
+      out.write("                            ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("<br>\r\n");
+      out.write("                            <input type=\"submit\" value=\"Turn on notifications\">\r\n");
+      out.write("                        </form>\r\n");
       out.write("                        <h3>5 winning oscar movies</h3>\r\n");
       out.write("                        <h4>Choose year</h4>\r\n");
       out.write("                        <button id=\"show1\" onClick=\"show1()\">2015</button>\r\n");
@@ -292,18 +296,23 @@ public final class Profile_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                            ");
+          out.write("                                ");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("\r\n");
-          out.write("                            <img src=\"");
+          out.write("                                <img src=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getImage()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\" width=\"200\"> ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("  rating: ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getRating()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("<br><br>\r\n");
-          out.write("                        ");
+          out.write("                                <input type=\"checkbox\" name=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" value=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${movie.getName()}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("\" style=\"float: right\"><p id=\"check\" style=\"float: right\">Notify me</p><br><br>\r\n");
+          out.write("                            ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

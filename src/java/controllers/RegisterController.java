@@ -26,13 +26,14 @@ public class RegisterController extends HttpServlet {
             User u = new User();
             utx.begin();
             if (checker.userExists(request.getParameter("uname"))) {
-                request.getRequestDispatcher("Register.jsp").forward(request, response);
+               request.getRequestDispatcher("Register.jsp").forward(request, response);
             } else {
                 u.setName(request.getParameter("name"));
                 u.setUsername(request.getParameter("uname"));
                 u.setPassword(request.getParameter("password"));
                 u.setEmail(request.getParameter("email"));
                 u.setGenre("");
+                u.setMovies("");
                 String adminPass = "";
 
                 if (request.getParameterMap().size() == 7) {

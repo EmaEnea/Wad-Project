@@ -45,10 +45,16 @@
                     </script>
                     <div class="word">
                         <h2>Profile</h2><br>
-                        <c:forEach items="${sessionScope.movies}" var="movie">
-                            <c:out value="${sessionScope.name}"/>
-                            <img src="${movie.getImage()}" width="200"> ${movie.getName()}  rating: ${movie.getRating()}<br><br>
-                        </c:forEach><br>
+                        <div class="notif"><p id="notif">${sessionScope.notifications}</p></div>
+                        <form method="POST" action="NotificationController">
+                            <p id="notif" style="font-weight: bold">Follow your favorite movies!</p>
+                            <c:forEach items="${sessionScope.movies}" var="movie">
+                                <c:out value="${sessionScope.name}"/>
+                                <img src="${movie.getImage()}" width="200"> ${movie.getName()}  rating: ${movie.getRating()}<br><br>
+                                <input type="checkbox" name="${movie.getName()}" value="${movie.getName()}" style="float: right"><p id="check" style="float: right">Notify me</p><br><br>
+                            </c:forEach><br>
+                            <input type="submit" value="Turn on notifications">
+                        </form>
                         <h3>5 winning oscar movies</h3>
                         <h4>Choose year</h4>
                         <button id="show1" onClick="show1()">2015</button>

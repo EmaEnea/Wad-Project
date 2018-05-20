@@ -44,6 +44,7 @@ public class MovieDAO {
         return movies;
     }
 
+    
     public List<util.Movie> getRecomMovies(String preferred, String user) throws SQLException, ClassNotFoundException {
         String[] pref = preferred.split(" ");
         List<util.Movie> movies = new ArrayList<>();

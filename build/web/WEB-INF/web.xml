@@ -24,6 +24,10 @@
         <servlet-name>ReviewController</servlet-name>
         <servlet-class>controllers.ReviewController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NotificationController</servlet-name>
+        <servlet-class>controllers.NotificationController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/RegisterController</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ReviewController</servlet-name>
         <url-pattern>/ReviewController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NotificationController</servlet-name>
+        <url-pattern>/NotificationController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

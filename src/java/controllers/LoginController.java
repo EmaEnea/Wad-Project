@@ -1,9 +1,13 @@
 package controllers;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +55,26 @@ public class LoginController extends HttpServlet {
                     request.getRequestDispatcher("AdminProfile.jsp").forward(request, response);
                 } else {
                     request.getSession().setAttribute("admin",null);
+                    
+                    SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy");
+                    SimpleDateFormat sdfDate2 = new SimpleDateFormat("yyyy-MM-dd");
+                    String currentDate = sdfDate.format(Calendar.getInstance().getTime());
+                    String currentDate2 = sdfDate2.format(Calendar.getInstance().getTime());
+                    String[] iter = checker.getUserMovies(request.getSession().getAttribute("users").toString()).split(" ");
+                    int i=0;
+                    if(!checker.getUserMovies(request.getSession().getAttribute("users").toString()).equals("")){
+                       String notifications="";
+                       for(String s : iter){
+                           if(checker.getDate(s).equals(currentDate) || checker.getDate(s).equals(currentDate2)){
+                                 notifications+=" The movie "+s+" is running today at "+checker.getHour(s)+" on "+checker.getChannel(s)+"<br>";
+                           }
+                            i++;
+                        }
+                       request.getSession().setAttribute("notifications", notifications);
+                    } 
+                    else{
+                        request.getSession().setAttribute("notifications","");
+                    }
                     request.getRequestDispatcher("Profile.jsp").forward(request, response);
                 }
             }
