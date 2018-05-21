@@ -48,11 +48,19 @@
                         <div class="notif"><p id="notif">${sessionScope.notifications}</p></div>
                         <form method="POST" action="NotificationController">
                             <p id="notif" style="font-weight: bold">Follow your favorite movies!</p>
+                            <table>
                             <c:forEach items="${sessionScope.movies}" var="movie">
-                                <c:out value="${sessionScope.name}"/>
-                                <img src="${movie.getImage()}" width="200"> ${movie.getName()}  rating: ${movie.getRating()}<br><br>
-                                <input type="checkbox" name="${movie.getName()}" value="${movie.getName()}" style="float: right"><p id="check" style="float: right">Notify me</p><br><br>
+                                <tr>
+                                    <td rowspan="3"><img src="${movie.getImage()}" width="200"></td>
+                                    <td>${movie.getName()}</td> 
+                                </tr> 
+                                <tr><td>Rating: ${movie.getRating()}</td></tr>
+                                <tr><td>Date and time: ${movie.getDate()}, ${movie.getHour()} -
+                                        <input type="checkbox" name="${movie.getName()}" value="${movie.getName()}" style="float: right"><p id="check" style="float: right">Notify me</p><br><br></td></tr>
+                                <tr><td><br></td></tr>
+                                
                             </c:forEach><br>
+                            </table>
                             <input type="submit" value="Turn on notifications">
                         </form>
                         <h3>5 winning oscar movies</h3>

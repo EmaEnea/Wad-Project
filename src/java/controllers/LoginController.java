@@ -1,5 +1,6 @@
 package controllers;
 
+import dao.UserDAO;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -54,8 +55,11 @@ public class LoginController extends HttpServlet {
                     request.getSession().setAttribute("admin","1");
                     request.getRequestDispatcher("AdminProfile.jsp").forward(request, response);
                 } else {
+                    dao.UserDAO u= new UserDAO();
+                    dao.MovieDAO m=new  dao.MovieDAO();
+                    List<util.Movie> movies=m.getRecomMovies(u.getGenres(user),user);
+                    request.getSession().setAttribute("movies", movies);
                     request.getSession().setAttribute("admin",null);
-                    
                     SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy");
                     SimpleDateFormat sdfDate2 = new SimpleDateFormat("yyyy-MM-dd");
                     String currentDate = sdfDate.format(Calendar.getInstance().getTime());

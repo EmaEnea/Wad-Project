@@ -28,6 +28,10 @@
         <servlet-name>NotificationController</servlet-name>
         <servlet-class>controllers.NotificationController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>create</servlet-name>
+        <servlet-class>create</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterController</servlet-name>
         <url-pattern>/RegisterController</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>NotificationController</servlet-name>
         <url-pattern>/NotificationController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>create</servlet-name>
+        <url-pattern>/create</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
